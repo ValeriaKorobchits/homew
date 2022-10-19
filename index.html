@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>draggable, droppable</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="jquery-ui-1.13.2.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.13.2.custom/jquery-ui.css">
+
+    <style>
+      #dg1, #dg2, #dg3, #dg4 { 
+        width: 150px;
+        height: 150px;
+        padding: 0.5em; 
+        cursor: pointer;
+        }
+
+        #dg1, #dg2, #dg3, #dg4 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+        #dp1, #dp2, #dp3, #dp4 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+
+        body{
+          background: linear-gradient(to top, #ff9900 -2%, #ffcc66 53%);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-attachment: fixed;
+        }
+      </style>
+
+    <script>
+      $(document).ready(function(){
+        $("#dg1").draggable();
+      $("#dp1").droppable({
+        over:function() {
+          $("#dg1").css("background-color", "#FFFDD0");
+          $("#dp1").css("background-color", "#FFFDD0");
+        },
+        drop:function(){
+          $("#dg1").css("display", "none");
+          $("#dp1").css("background-color", "#98FF98");
+          $("#dp1").html("Correct!");
+          alert("Вітаю");
+        }
+      })
+    })
+
+      $(document).ready(function(){
+        $("#dg2").draggable();
+      $("#dp2").droppable({
+        over:function() {
+          $("#dg2").css("background-color", "#FFFDD0");
+          $("#dp2").css("background-color", "#FFFDD0");
+        },
+        drop:function(){
+          $("#dg2").css("display", "none");
+          $("#dp2").css("background-color", "#98FF98");
+          $("#dp2").html("Correct!");
+          alert("Вітаю");
+        }
+      })
+    })
+  
+      $(document).ready(function(){
+        $("#dg3").draggable();
+      $("#dp3").droppable({
+        over:function() {
+          $("#dg3").css("background-color", "#FFFDD0");
+          $("#dp3").css("background-color", "#FFFDD0");
+        },
+        drop:function(){
+          $("#dg3").css("display", "none");
+          $("#dp3").css("background-color", "#98FF98");
+          $("#dp3").html("Correct!");
+          alert("Вітаю");
+        }
+      })
+    })
+
+      $(document).ready(function(){
+        $("#dg4").draggable();
+      $("#dp4").droppable({
+        over:function() {
+          $("#dg4").css("background-color", "#FFFDD0");
+          $("#dp4").css("background-color", "#FFFDD0");
+        },
+        drop:function(){
+          $("#dg4").css("display", "none");
+          $("#dp4").css("background-color", "#98FF98");
+          $("#dp4").html("Correct!");
+          alert("Вітаю");
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+    <div id="dg1" class="ui-widget-content">
+        <p>Астрономія</p>
+      </div>
+       
+      <div id="dp1" class="ui-widget-header">
+        <p>Система наук, що вивчає життя в усіх його проявах, про живу природу, про істот, що заселяють Землю чи вже вимерли.</p>
+      </div>
+      <div id="dg2" class="ui-widget-content">
+        <p>Бактеріологія</p>
+      </div>
+       
+      <div id="dp2" class="ui-widget-header">
+        <p>Наука, яка вивчає закономірності відносин між організмами та довкіллям.</p>
+      </div>
+      <div id="dg3" class="ui-widget-content">
+        <p>Екологія</p>
+      </div>
+       
+      <div id="dp3" class="ui-widget-header">
+        <p>Наука,яка вивчає спостереження і пояснення подій, які відбуваються за межами Землі та її атмосфери.</p>
+      </div>
+      <div id="dg4" class="ui-widget-content">
+        <p>Біологія</p>
+      </div>
+       
+      <div id="dp4" class="ui-widget-header">
+        <p>Наука, яка вивчає будову, життя і властивості бактерій.</p>
+      </div>
+</body>
+</html>
